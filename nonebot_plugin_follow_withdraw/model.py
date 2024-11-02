@@ -83,6 +83,6 @@ async def save_message(
 
 async def clear_message():
     async with create_session() as session:
-        await session.execute(delete(OriginMessage))
         await session.execute(delete(FollowMessage))
+        await session.execute(delete(OriginMessage))
         await session.commit()
